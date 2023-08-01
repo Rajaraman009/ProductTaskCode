@@ -37,7 +37,7 @@ import com.productsdata.core.repository.UserRepository;
 
 @RestController
 public class TaskController {
-	Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+    Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
 
     private Queue<Tasks> taskQueue = new PriorityQueue<>(new TaskComparator());
 
@@ -192,30 +192,27 @@ public class TaskController {
         return ResponseEntity.ok(new MessageResponse(gson.toJson(overdueTasks)));
     }
 
-    
+
     @GetMapping("/api/tasks/status/{status}")
-    public ResponseEntity<MessageResponse> getSpecificStatus(@PathVariable String status){
-    	TaskStatus requestedStatus;
-    	 List<Tasks> specificTasks = new ArrayList<Tasks>();
+    public ResponseEntity<MessageResponse> getSpecificStatus(@PathVariable String status) {
+        TaskStatus requestedStatus;
+        List<Tasks> specificTasks = new ArrayList<Tasks>();
         try {
             // Parse the status string to an enum value
             requestedStatus = TaskStatus.valueOf(status.toUpperCase());
-    	
-            specificTasks    = tasksRepository.findAll().stream()
+
+            specificTasks = tasksRepository.findAll().stream()
                     .filter(task -> task.getTaskStatus() == requestedStatus)
                     .collect(Collectors.toList());
 
-    	
-            
-        }catch(Exception ex) {
-        	
+
+        } catch (Exception ex) {
+
         }
         return ResponseEntity.ok(new MessageResponse(gson.toJson(specificTasks)));
     }
-    
-    
-    
-    
+
+
     // Get completed tasks by date range
     @GetMapping("/api/tasks/completed")
     public ResponseEntity<MessageResponse> getCompletedTasksByDateRange(

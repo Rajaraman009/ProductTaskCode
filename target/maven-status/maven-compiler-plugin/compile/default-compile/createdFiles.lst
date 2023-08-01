@@ -1,0 +1,13 @@
+com/productsdata/core/controller/ProductController.class
+com/productsdata/core/enumfolder/TaskStatus.class
+com/productsdata/core/entity/User.class
+com/productsdata/core/entity/ApprovalQueue.class
+com/productsdata/core/enumfolder/Priority.class
+com/productsdata/core/repository/ProductRepository.class
+com/productsdata/core/entity/Product.class
+com/productsdata/core/entity/Tasks.class
+com/productsdata/core/repository/ApprovalQueueRepository.class
+com/productsdata/core/entity/AssignedTask.class
+com/productsdata/core/model/MessageResponse.class
+com/productsdata/core/model/ProductRequestDto.class
+com/productsdata/core/model/CreateUser.class

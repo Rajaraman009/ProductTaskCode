@@ -1,0 +1,38 @@
+GET PRODUCTS: http://localhost:8000/api/products
+
+SEARCH PRODUCTS: http://localhost:8000/api/products/search?productName=ball&minPrice=100&maxPrice=500&minDate=2023-07-29&maxDate=2023-07-29
+
+CREATE PRODUCTS: http://localhost:8000/api/products
+
+UPDATE PRODUCTS: http://localhost:8000/api/products/5
+
+DELETE PRODUCTS: http://localhost:8000/api/products/5
+
+GET APPROVAL: http://localhost:8000/api/products/approval-queue
+
+APPROVE : http://localhost:8000/api/products/approval-queue/6?status=approve
+REJECT : http://localhost:8000/api/products/approval-queue/6?status=reject
+
+GET ALL TASKS: http://localhost:8000/api/tasks
+
+CREATE TASK: http://localhost:8000/api/tasks
+
+CREATE USER : http://localhost:8000/api/user
+
+UPDTAE TASK : http://localhost:8000/api/tasks/3
+
+DELETE TASK : http://localhost:8000/api/tasks/3
+
+ASSIGN TASK : http://localhost:8000/api/tasks/3/assign
+
+SPECIFIC USER : http://localhost:8000/api/users/1/tasks
+
+UPDATE PROGRESS : http://localhost:8000/api/tasks/2/progress
+
+OVERDUE TASK : http://localhost:8000/api/tasks/overdue
+
+COMPLETE TASK WITH IN GIVEN RANGE : http://localhost:8000/api/tasks/completed?startDate=2023-01-01&endDate=2023-07-31
+
+GET STATSTICS : http://localhost:8000/api/tasks/statistics
+
+GET TASK BY STATUS : http://localhost:8000/api/tasks/status/OPEN
